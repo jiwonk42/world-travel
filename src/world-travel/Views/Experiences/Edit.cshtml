@@ -16,7 +16,10 @@
     @Html.LabelFor(model => model.Activity)
     @Html.EditorFor(model => model.Activity)
 
-    <input type="submit" value="save"/>
+    @Html.LabelFor(model => model.LocationId)
+    @Html.DropDownList("LocationId")
+
+    <input type="submit" value="Save" class="btn btn-default" />
 }
 
 <p>@Html.ActionLink("Back to List", "Index")</p>
