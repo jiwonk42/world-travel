@@ -49,5 +49,20 @@ namespace world_travel.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        public IActionResult Delete(int id)
+        {
+            var thisExperience = db.Experiences.FirstOrDefault(experiences => experiences.ExperienceId == id);
+            return View(thisExperience);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        public IActionResult DeleteConfirmed(int id)
+        {
+            var thisExperience = db.Experiences.FirstOrDefault(experiences => experiences.ExperienceId == id);
+            db.Experiences.Remove(thisExperience);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
