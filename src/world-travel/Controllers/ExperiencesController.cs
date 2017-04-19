@@ -22,5 +22,18 @@ namespace world_travel.Controllers
             var thisExperience = db.Experiences.FirstOrDefault(experiences => experiences.ExperienceId == id);
             return View(thisExperience);
         }
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create(Experience experience)
+        {
+            db.Experiences.Add(experience);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
