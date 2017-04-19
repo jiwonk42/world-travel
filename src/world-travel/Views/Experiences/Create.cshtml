@@ -12,6 +12,10 @@
 {
     @Html.LabelFor(model => model.Activity)
     @Html.TextBoxFor(model => model.Activity)
-    <input type="submit" value="Add new experience" />
+
+    @Html.LabelFor(model => model.LocationId)
+    @Html.DropDownList("LocationId")
+
+    <input type="submit" value="Create" class="btn btn-default" />
 }
 <p>@Html.ActionLink("Back to list", "Index")</p>
