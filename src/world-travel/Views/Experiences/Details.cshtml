@@ -7,5 +7,7 @@
 
 <h2>Details</h2>
 <hr />
-@Html.DisplayNameFor(model => model.Activity): @Html.DisplayFor(model => model.Activity)
-<p>@Html.ActionLink("Back to list", "Index")</p>
+<p>@Html.DisplayNameFor(model => model.Activity): @Html.DisplayFor(model => model.Activity)</p>
+<p>@Html.DisplayNameFor(model => model.LocationId) : @Html.DisplayFor(model => model.LocationId)</p>
+
+<p>@Html.ActionLink("Edit", "Edit", new { id = Model.ExperienceId }) | @Html.ActionLink("Back to List", "Index")</p>
