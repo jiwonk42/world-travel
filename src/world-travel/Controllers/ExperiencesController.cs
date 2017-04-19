@@ -14,7 +14,8 @@ namespace world_travel.Controllers
         private WorldTravelContext db = new WorldTravelContext();
         public IActionResult Index()
         {
-            return View(db.Experiences.ToList());
+            //return View(db.Experiences.ToList());
+            return View(db.Experiences.Include(experiences => experiences.Location).ToList());
         }
 
         public IActionResult Details(int id)
@@ -25,6 +26,7 @@ namespace world_travel.Controllers
 
         public IActionResult Create()
         {
+            ViewBag.LocationId = new SelectList(db.Locations, "LocationId", "City", "Country");
             return View();
         }
 
@@ -39,6 +41,7 @@ namespace world_travel.Controllers
         public IActionResult Edit(int id)
         {
             var thisExperience = db.Experiences.FirstOrDefault(experiences => experiences.ExperienceId == id);
+            ViewBag.LocationId = new SelectList(db.Locations, "LocationId", "City", "Country");
             return View(thisExperience);
         }
 

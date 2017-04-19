@@ -9,7 +9,7 @@ namespace world_travel.Models
     public class WorldTravelContext : DbContext
     {
         public virtual DbSet<Experience> Experiences { get; set; }
-
+        public virtual DbSet<Location> Locations { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
             options.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=world_travel;integrated security=True");

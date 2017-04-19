@@ -13,6 +13,7 @@ namespace world_travel.Models
         [Key]
         public int ExperienceId { get; set; }
         public string Activity { get; set; }
-        //public int LocationId { get; set; }
+        public int LocationId { get; set; }
+        public virtual Location Location { get; set; }
     }
 }
