@@ -1,0 +1,11 @@
+﻿@{
+    ViewData["Title"] = "World Travel";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model world_travel.Models.Experience
+
+<h2>Details</h2>
+<hr />
+@Html.DisplayNameFor(model => model.Activity): @Html.DisplayFor(model => model.Activity)
+<p>@Html.ActionLink("Back to list", "Index")</p>

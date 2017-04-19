@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "World Travel";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model IEnumerable<world_travel.Models.Experience>
+
+<h2>World Travel</h2>
+<h4>@Html.DisplayNameFor(model => model.Activity)</h4>
+<ul>
+    @foreach (var listExperience in Model)
+    {
+        <li>@Html.DisplayFor(modelExperience => listExperience.Activity) | @Html.ActionLink("Details", "Details", new { id = listExperience.ExperienceId })</li>
+    }
+</ul>
